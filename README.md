@@ -1,6 +1,6 @@
 # Working with Pagination Loops in Tines
 
-In my previous [blog](https://automatesecops.github.io/Tines-AI-Winner/), I wrote about my six month journey with the Tines platform, resulting in the top prize for the AI Efficiency category.  I began to automate some of the time consuming EDR reports, such as the weekly [CrowdStrike RFM report](https://www.tines.com/library/stories/1257278/?name=generate-a-crowdstrike-rfm-report-with-ai&redirected-from=%2Fyou-did-what-with-tines%2Fsummer-2024%2F).
+In my previous [blog](https://automatesecops.github.io/Tines-AI-Winner/), I wrote about my six month journey with the Tines platform, resulting in the top prize for the AI Efficiency category.  I began to automate some of the time consuming EDR reports, such as the weekly [CrowdStrike RFM report](https://www.tines.com/library/stories/1257278/?name=generate-a-crowdstrike-rfm-report-with-ai).
 
 In this post, I will dive deeper into the pagination loop that I used in the CrowdStrike RFM story since pagination can be challenging to code in Python. I will provide some examples of how Tines makes pagination easier for someone without coding experience.
 
