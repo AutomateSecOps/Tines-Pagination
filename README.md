@@ -34,15 +34,14 @@ pd.concat(loop)
 
 Working with the Tines Customer Success Team, I learned a simple pagination loop that I reuse in all my workflows.
 
-The series of actions start with:
-1. The inital HTTP request Tines action. 
-2. The results are collected into an array. 
-3. The workflow checks to see if there are additional results. (Tines Trigger action)
-4. If there are, the workflow moves into the pagination loop to query the REST endpoint for the next set of results. 
-5. The results are combined with the initial results in the second Host Array action. 
-6. The pagination loop goes back to the Trigger action to see if there are more results.
-7. If there are additional results, the workflow enters back into the loop. 
-5. Once all the results are collected, the workflow exits the pagination loop to move on to the next series of actions.
+The series of actions starts with the inital HTTP request Tines action. 
+1. The results are collected into an array. 
+2. The workflow checks to see if there are additional results. (Tines Trigger action)
+3. If there are, the workflow moves into the pagination loop to query the REST endpoint for the next set of results. 
+4. The results are combined with the initial results in the second Host Array action. 
+5. The pagination loop goes back to the Trigger action to see if there are more results.
+6. If there are additional results, the workflow enters back into the loop. 
+7. Once all the results are collected, the workflow exits the pagination loop to move on to the next series of actions.
 
 ### TIP: Use the same name in the initial HTTP request and Host Array Event Transformation actions and the subsequent ones in the pagination loop.
 <img src="./images/Pagination-Loop.png">
@@ -50,7 +49,7 @@ The series of actions start with:
 ### API Schema Pagination Example
 You can tell how much time, money, and effort a company puts into their API development by looking at their documentation and the API schema. For example, CrowdStrike puts an enormous amout of time and effort into their Falcon API.  A security analyst can accomplish the same tasks with the REST API as in the console. The API client/key secret pair can be scoped to limit the ability to what actions an API key can accomplish.
 
-In regards to pagination, CrowdStrike provides the means to go to the next page of results with the initial payload response.  In the Tines event, we see the CrowdStrike response. Under meta>pagination, there are the total number of results along with the next set of results (offset):
+In regards to pagination, CrowdStrike provides the means to go to the next page of results with the payload response.  In the Tines event, we see the CrowdStrike response. Under meta>pagination, there are the total number of results along with the next set of results (offset):
 
 <img src="./images/CS-HTTP-Payload.png">
 
