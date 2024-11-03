@@ -1,8 +1,6 @@
 # Working with Pagination Loops in Tines
 
-In my previous [blog](https://automatesecops.github.io/Tines-AI-Winner/), I wrote about my six month journey with the Tines platform, resulting in the top prize for the AI Efficiency category.  I began to automate some of the time consuming EDR reports, such as the weekly [CrowdStrike RFM report](https://www.tines.com/library/stories/1257278/?name=generate-a-crowdstrike-rfm-report-with-ai).
-
-In this post, I will dive deeper into the pagination loop that I used in the CrowdStrike RFM story since pagination can be challenging to code in Python. I will provide some examples of how Tines makes pagination easier for someone without coding experience.
+In my previous [blog](https://automatesecops.github.io/Tines-AI-Winner/), I wrote about my six month journey with the Tines platform, resulting in the top prize for the AI Efficiency category. In this blog, I explain how I used a pagination loop for collecting CrowdStrike hosts in RFM. Here is the Tines Story for my [CrowdStrike RFM report](https://www.tines.com/library/stories/1257278/?name=generate-a-crowdstrike-rfm-report-with-ai) workflow that won top prize.
 
 What is a pagination loop?
 
@@ -62,7 +60,7 @@ Using the Event Transformation Action in message mode, we create an array contai
 <img src="./images/HostArray-1.png">
 
 ### 2. Trigger Action
-The trigger action rule needs to be configured based on the last pagination results in order to exit the loop. We see below that CrowdStrike provides a total number of zero or the offset is empty.
+The trigger action rule needs to be configured based on the last pagination results in order to exit the loop and to avoid an infinite loop. We see below that CrowdStrike provides a total number of zero or the offset is empty.
 
 <img src="./images/Pagination-Loop-2.png">
 
@@ -70,7 +68,7 @@ I based my trigger action rule on the total number of results left:
 
 <img src="./images/TriggerLogic.png">
 
-If there are additional results, the workflow enters back into the pagination loop, or exits if the results are zero.
+If there are additional results, the total number of results are not equal to zero, the workflow enters back into the pagination loop, or exits if the results are zero.
 
 ### 3. The HTTP Request in the Pagination Loop
 To configure pagination in the CrowdStrike HTTP Request action, use the pill to reference the offset link under meta>pagination>offset from the initial HTTP response. It is simple and straightforward.
