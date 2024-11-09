@@ -96,3 +96,5 @@ Tom
 ## Tines Documenation
 - [Tines Pagination Examples Story](https://www.tines.com/library/stories/91375/?name=implement-pagination-with-these-techniques)
 - [Tines Concat Function](https://www.tines.com/docs/formulas/functions/concat/)
+
+[Previous Blog](https://automatesecops.github.io/Tines-AI-Winner/)
