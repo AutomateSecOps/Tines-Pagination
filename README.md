@@ -99,3 +99,4 @@ Tom
 - [Tines Community Edition](https://www.tines.com/pricing/)
 
 [Previous Blog](https://automatesecops.github.io/Tines-AI-Winner/)
+[Next Blog](https://automatesecops.github.io/Working-With-Tines-Resources/)
